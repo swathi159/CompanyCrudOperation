@@ -1,5 +1,7 @@
 package com.opennidus.company.service;
 
+import java.util.Optional;
+
 import com.opennidus.company.Exception.UserDefinedException;
 import com.opennidus.company.model.Company;
 
@@ -11,6 +13,6 @@ public interface ICompany {
 
 	Company updateCompany(Company company);
 
-	Company getByIdCompany(Long id);
+	Optional<Company> getByIdCompany(Long id);
 
 }

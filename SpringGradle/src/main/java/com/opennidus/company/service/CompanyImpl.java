@@ -1,5 +1,9 @@
 package com.opennidus.company.service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,8 +40,8 @@ public class CompanyImpl implements ICompany {
 	}
 
 	@Override
-	public Company getByIdCompany(Long id) {
-		Company company = companyRepo.getOne(id);
+	public Optional<Company> getByIdCompany(Long id) {
+		Optional<Company> company = companyRepo.findById(id);
 		return company;
 	}
 

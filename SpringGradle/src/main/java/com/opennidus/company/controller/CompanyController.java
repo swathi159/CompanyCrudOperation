@@ -1,5 +1,7 @@
 package com.opennidus.company.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +42,7 @@ public class CompanyController {
 
 	@RequestMapping(value = "/findById/{company_id}", method = RequestMethod.GET)
 	public ResponseEntity<?> findByIdCompany(@PathVariable Long company_id) {
-		Company company1 = companyimpl.getByIdCompany(company_id);
+		Optional<Company> company1 = companyimpl.getByIdCompany(company_id);
 		return new ResponseEntity<>(company1, HttpStatus.OK);
 	}
 }
